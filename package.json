@@ -1,0 +1,14 @@
+{
+  "name": "webflow-score",
+  "version": "1.0.0",
+  "type": "module",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "node-fetch": "^3.3.2",
+    "ws": "^8.18.0"
+  },
+  "scripts": {
+    "start": "node index.js"
+  }
+}

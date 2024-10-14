@@ -128,6 +128,7 @@ app.post("/", async (req, res) => {
 
     // add hubspot logic
     const hubsopotUrl = process.env.HUBSPOT_URL;
+    console.log(hubsopotUrl);
 
     const hubspotUrl = hubsopotUrl;
     const hubspotOptions = {
@@ -138,21 +139,21 @@ app.post("/", async (req, res) => {
       },
       body: JSON.stringify({
         properties: {
-          email: formData.leadEmail,
-          firstname: formData.leadFirstName || "NoName",
-          company_size: formData.leadTeamSize,
-          custom_source: formData.leadSource || "Website",
-          contact_role: formData.leadRole,
-          phone: formData.leadPhone || "NoPhone",
-          ga_id: formData.leadGAID || "NoGAID",
-          country: formData.leadCountry,
-          utm_campaign: formData.leadUtmCampaign || "NoCampaign",
-          utm_content: formData.leadUtmContent || "NoContent",
-          utm_medium: formData.leadUtmMedium || "NoMedium",
-          utm_source: formData.leadUtmSource || "NoSource",
-          utm_term: formData.leadUtmTerm || "NoTerm",
-          score: resData.score,
-          self_service: resData.self_service,
+          email: String(formData.leadEmail),
+          firstname: String(formData.leadFirstName || "NoName"),
+          company_size: String(formData.leadTeamSize),
+          custom_source: String(formData.leadSource || "Website"),
+          contact_role: String(formData.leadRole),
+          phone: String(formData.leadPhone || "NoPhone"),
+          ga_id: String(formData.leadGAID || "NoGAID"),
+          country: String(formData.leadCountry),
+          utm_campaign: String(formData.leadUtmCampaign || "NoCampaign"),
+          utm_content: String(formData.leadUtmContent || "NoContent"),
+          utm_medium: String(formData.leadUtmMedium || "NoMedium"),
+          utm_source: String(formData.leadUtmSource || "NoSource"),
+          utm_term: String(formData.leadUtmTerm || "NoTerm"),
+          score: String(resData.score),
+          self_service: String(resData.self_service),
         },
       }),
     };

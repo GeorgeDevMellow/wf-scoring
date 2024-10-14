@@ -152,8 +152,6 @@ app.post("/", async (req, res) => {
           utm_medium: String(formData.leadUtmMedium || "NoMedium"),
           utm_source: String(formData.leadUtmSource || "NoSource"),
           utm_term: String(formData.leadUtmTerm || "NoTerm"),
-          score: String(resData.score),
-          self_service: String(resData.self_service),
         },
       }),
     };

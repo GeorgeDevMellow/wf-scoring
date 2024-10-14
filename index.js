@@ -128,7 +128,6 @@ app.post("/", async (req, res) => {
 
     // add hubspot logic
     const hubsopotUrl = process.env.HUBSPOT_URL;
-    console.log(hubsopotUrl);
 
     const hubspotUrl = hubsopotUrl;
     const hubspotOptions = {
@@ -152,6 +151,7 @@ app.post("/", async (req, res) => {
           utm_medium: String(formData.leadUtmMedium || "NoMedium"),
           utm_source: String(formData.leadUtmSource || "NoSource"),
           utm_term: String(formData.leadUtmTerm || "NoTerm"),
+          custom_score: combinedData.score
         },
       }),
     };
@@ -185,5 +185,3 @@ app.post("/", async (req, res) => {
 server.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
-
-// test comment
